@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # 只在 push 到 main 分支時觸發
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Astro and Node
+        uses: withastro/action-astro@v2
+        # with:
+          # node-version: 20 # 可選：指定 Node.js 版本
+          # pnpm-version: 8 # 可選：指定 pnpm 版本
+
+      - name: Install dependencies 👨‍💻
+        run: npm install
+
+      - name: Build project 🏗️
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # 如果您使用自訂域名，請取消下一行的註解
+          # cname: your-custom-domain.com
