@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Astro and Node
-        uses: withastro/action-astro@v2
+        uses: withastro/action@v2
         # with:
           # node-version: 20 # 可選：指定 Node.js 版本
           # pnpm-version: 8 # 可選：指定 pnpm 版本
