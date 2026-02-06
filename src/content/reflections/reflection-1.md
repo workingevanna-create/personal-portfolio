@@ -1,7 +1,7 @@
 ---
 title: "Reflection 1"
 description: "This is the first reflection."
-publishDate: "2024-01-03"
+publishDate: 2024-01-03
 tags: ["personal", "growth"]
 ---
 
